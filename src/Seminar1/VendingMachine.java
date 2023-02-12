@@ -14,7 +14,7 @@ public class VendingMachine {
     public void addProduct (Product product){
         productList.add(product);
     }
-    public Product returnProduct(String name){
+    public Product getProduct(String name){
         for (Product el: productList) {
             if(el.getName().equals(name)) return el;
         }
@@ -26,5 +26,4 @@ public class VendingMachine {
             System.out.println(el);
         }
     }
-
 }

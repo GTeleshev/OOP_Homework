@@ -8,10 +8,10 @@ public class DrinkMachine extends VendingMachine {
         super(firstMachine);
         drinkList = new ArrayList<Drink>();
     }
-    public void addDrink(Drink dr){
+    public void addProduct(Drink dr){
         drinkList.add(dr);
     }
-    public Drink returnProduct(String name){
+    public Drink getProduct(String name){
         for (Drink el: drinkList) {
             if(el.getName().equals(name)) return el;
         }

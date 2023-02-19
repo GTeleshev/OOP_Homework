@@ -3,17 +3,21 @@ package zoo.cage;
 import zoo.animals.Animal;
 import zoo.animals.Wolf;
 import zoo.animals.comparators.WolfComparator;
+import zoo.animals.iterators.WolfIterator;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 
-public class WolfCage implements AnimalCage {
-    protected int clean;
+public class WolfCage implements AnimalCage, Iterable<Wolf> {
     protected final ArrayList<Wolf> wolves;
+    protected int clean;
+    protected WolfIterator wolfIter;
 
     public WolfCage() {
         wolves = new ArrayList<>();
+        wolfIter = new WolfIterator(wolves);
     }
 
     public void sortByWeightAndAge() {
@@ -67,5 +71,10 @@ public class WolfCage implements AnimalCage {
                 "clean=" + clean +
                 ", wolves=" + wolves.size() +
                 '}';
+    }
+
+    @Override
+    public Iterator<Wolf> iterator() {
+        return wolfIter;
     }
 }

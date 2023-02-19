@@ -6,11 +6,13 @@ import java.util.Iterator;
 import java.util.List;
 
 public class WolfIterator implements Iterator<Wolf> {
-    private List<Wolf> wolfList;
+    private final List<Wolf> wolfList;
     private int cursor;
-    public WolfIterator(List<Wolf> wolfList1){
+
+    public WolfIterator(List<Wolf> wolfList1) {
         this.wolfList = wolfList1;
     }
+
     @Override
     public boolean hasNext() {
         return cursor < wolfList.size();

@@ -2,7 +2,6 @@ package zoo;
 
 import zoo.animals.Lion;
 import zoo.animals.Wolf;
-import zoo.animals.iterators.WolfIterator;
 import zoo.cage.LionCage;
 import zoo.cage.WolfCage;
 import zoo.factory.LionsFactory;
@@ -42,9 +41,8 @@ public class Program {
         secCage.sortByWeightAndAge();
         secCage.printCage();
         System.out.println("---------Iterating through wolf list------------");
-        WolfIterator wolfIter = new WolfIterator(secColl);
-        while (wolfIter.hasNext()) {
-            Wolf nextWolf = wolfIter.next();
+        while (secCage.iterator().hasNext()) {
+            Wolf nextWolf = secCage.iterator().next();
             System.out.println(nextWolf);
         }
     }

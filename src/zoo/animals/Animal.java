@@ -1,36 +1,38 @@
 package zoo.animals;
 
 public abstract class Animal {
-//    Создать package – animals. Работу продолжаем в нем
+    //    Создать package – animals. Работу продолжаем в нем
 //    Создать абстрактный класс Animal с полями год рождения, вес, кол-во конечностей
 //    Реализовать наследников класса Animal классы Lion и Snake, добавив к ним по одному доп. полю объем гривы и длина тела соответственно.
 //*4.  Реализовать метод  кормления void feed(int foodWeight), после которого вес животного увеличивается.
-    protected int birthYear;
+    protected int age;
     protected int weight;
     protected int limbsCount;
 
-    Animal(int birthYear, int weight, int limbsCount){
-        this.birthYear = birthYear;
+    Animal(int age, int weight, int limbsCount) {
+        this.age = age;
         this.weight = weight;
         this.limbsCount = limbsCount;
     }
+
     public abstract int getMaxWeight();
+
     public abstract String getType();
-    public void feed(int foodWeight){
-        if(this.weight + foodWeight <= getMaxWeight()) {
-            this.weight =+foodWeight;
-        }
-        else{
+
+    public void feed(int foodWeight) {
+        if (this.weight + foodWeight <= getMaxWeight()) {
+            this.weight = +foodWeight;
+        } else {
             System.out.println("Max weight exceeded");
         }
     }
 
-    public int getBirthYear() {
-        return this.birthYear;
+    public int getAge() {
+        return this.age;
     }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getWeight() {

@@ -2,16 +2,16 @@ package zoo.animals;
 
 public class Wolf extends Animal {
     protected static final int MAX_WEIGHT = 100;
-    protected static final String TYPE = "Snake";
+    protected static final String TYPE = "Wolf";
 
-    Wolf(int birthYear, int weight, int limbsCount) {
-        super(birthYear, weight, limbsCount);
+    public Wolf(int age, int weight, int limbsCount) {
+        super(age, weight, limbsCount);
     }
 
     @Override
     public String toString() {
         return "Wolf{" +
-                "birthYear=" + birthYear +
+                "age=" + age +
                 ", weight=" + weight +
                 ", limbsCount=" + limbsCount +
                 '}';

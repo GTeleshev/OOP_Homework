@@ -5,15 +5,15 @@ public class Snake extends Animal {
     protected static final int MAX_WEIGHT = 100;
     protected static final String TYPE = "Snake";
 
-    public Snake(int birthYear, int weight, int limbsCount, int bodyLength) {
-        super(birthYear, weight, limbsCount);
+    public Snake(int age, int weight, int limbsCount, int bodyLength) {
+        super(age, weight, limbsCount);
         this.bodyLength = bodyLength;
     }
 
     @Override
     public String toString() {
         return "Snake{" +
-                "birthYear=" + birthYear +
+                "birthYear=" + age +
                 ", weight=" + weight +
                 ", limbsCount=" + limbsCount +
                 '}';

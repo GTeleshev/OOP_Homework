@@ -13,6 +13,18 @@ public class WolfIterator implements Iterator<Wolf> {
         this.wolfList = wolfList1;
     }
 
+    public int getCursor() {
+        return this.cursor;
+    }
+
+    public void setCursor(int newPos) {
+        this.cursor = newPos;
+    }
+
+    public void resetCursor() {
+        this.cursor = 0;
+    }
+
     @Override
     public boolean hasNext() {
         return cursor < wolfList.size();
@@ -23,3 +35,4 @@ public class WolfIterator implements Iterator<Wolf> {
         return wolfList.get(cursor++);
     }
 }
+

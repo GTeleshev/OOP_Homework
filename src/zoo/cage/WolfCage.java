@@ -75,6 +75,6 @@ public class WolfCage implements AnimalCage, Iterable<Wolf> {
 
     @Override
     public Iterator<Wolf> iterator() {
-        return wolfIter;
+        return new WolfIterator(wolves);
     }
 }

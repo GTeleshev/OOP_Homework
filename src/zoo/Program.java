@@ -8,6 +8,7 @@ import zoo.factory.LionsFactory;
 import zoo.factory.WolfFactory;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Program {
     //    Создать класс WolfComparator, реализующий сравнение волков по их весу и возрасту.
@@ -41,8 +42,15 @@ public class Program {
         secCage.sortByWeightAndAge();
         secCage.printCage();
         System.out.println("---------Iterating through wolf list------------");
-        while (secCage.iterator().hasNext()) {
-            Wolf nextWolf = secCage.iterator().next();
+        Iterator<Wolf> firstIter = secCage.iterator();
+        while (firstIter.hasNext()) {
+            Wolf nextWolf = firstIter.next();
+            System.out.println(nextWolf);
+        }
+        System.out.println("Hello there");
+        Iterator<Wolf> newIter = secCage.iterator();
+        while (newIter.hasNext()) {
+            Wolf nextWolf = newIter.next();
             System.out.println(nextWolf);
         }
     }

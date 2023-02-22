@@ -2,27 +2,45 @@ package Seminar1;
 
 import java.util.ArrayList;
 
-public class VendingMachine {
-    private String name = "default";
-    protected ArrayList<Product> productList;
+public class VendingMachine<T extends Product> {
+    private ArrayList<T> productList;
+    private String name;
 
     public VendingMachine(String firstMachine) {
         this.name = firstMachine;
-        this.productList = new ArrayList<Product>();
+        this.productList = new ArrayList<T>();
     }
 
-    public void addProduct (Product product){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<T> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(ArrayList<T> productList) {
+        this.productList = productList;
+    }
+
+    public void addProduct(T product) {
         productList.add(product);
     }
-    public Product getProduct(String name){
-        for (Product el: productList) {
-            if(el.getName().equals(name)) return el;
+
+    public T getProduct(String name) {
+        for (T el : productList) {
+            if (el.getName().equals(name)) return el;
         }
         return null;
     }
-    public void printProducts(){
-        for (var el: this.productList
-             ) {
+
+    public void printProducts() {
+        for (T el : this.productList
+        ) {
             System.out.println(el);
         }
     }

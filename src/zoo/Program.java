@@ -6,15 +6,15 @@ import zoo.cage.LionCage;
 import zoo.cage.WolfCage;
 import zoo.factory.LionsFactory;
 import zoo.factory.WolfFactory;
+import zoo.zoo.Zoo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Program {
-    //    Создать класс WolfComparator, реализующий сравнение волков по их весу и возрасту.
-//    В классе WolfCage добавить метод сортировки волков, используя созданный WolfComparator
-//    Имплементировать в классе WolfCage интерфейс Iterable<Wolf> и реализовать логику итерации
-//    по волкам в клетке с помощью класса WolfIterator
+//    Выполнить все задания из семинара 4
+//    Имплементировать обобщенный интерфейс AnimalCage в классах SnakeCage и WolfCage
+
     public static void main(String[] args) {
         ArrayList<Lion> newColl = LionsFactory.createLionCollection(10);
         System.out.println(newColl);
@@ -53,5 +53,7 @@ public class Program {
             Wolf nextWolf = newIter.next();
             System.out.println(nextWolf);
         }
+        Zoo newZoo = new Zoo();
+        System.out.println(newZoo);
     }
 }

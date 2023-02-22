@@ -2,12 +2,14 @@ package zoo.cage;
 
 import zoo.animals.Animal;
 
-public interface AnimalCage {
-    int animalAdd(Animal animalToAdd);
+public interface AnimalCage<T extends Animal> {
+    int animalAdd(T animalToAdd);
+
+    void ageSort();
 
     void foodTransfer(int foodWeight);
 
     void cageClean();
 
-    Animal catchAnimal();
+    T catchAnimal();
 }

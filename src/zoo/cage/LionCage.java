@@ -1,28 +1,24 @@
 package zoo.cage;
 
-import zoo.animals.Animal;
 import zoo.animals.Lion;
+import zoo.animals.comparators.AnimalComparator;
 import zoo.animals.comparators.LionComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class LionCage implements AnimalCage {
-    private int clean;
+public class LionCage implements AnimalCage<Lion> {
     private final ArrayList<Lion> lions;
+    private int clean;
 
     public LionCage() {
         lions = new ArrayList<>();
     }
 
     @Override
-    public int animalAdd(Animal lionToAdd) {
-        if (lionToAdd instanceof Lion) {
-            lions.add((Lion) lionToAdd);
-        } else {
-            System.out.println("Not a lion");
-        }
+    public int animalAdd(Lion lionToAdd) {
+        lions.add(lionToAdd);
         return lions.size();
     }
 
@@ -42,7 +38,7 @@ public class LionCage implements AnimalCage {
     }
 
     @Override
-    public Animal catchAnimal() {
+    public Lion catchAnimal() {
         Random rand = new Random();
         int index = rand.nextInt(lions.size());
         if (lions.size() > 0) {
@@ -62,7 +58,7 @@ public class LionCage implements AnimalCage {
     }
 
     public void ageSort() {
-        Collections.sort(lions);
+        Collections.sort(lions, new AnimalComparator());
     }
 
     @Override

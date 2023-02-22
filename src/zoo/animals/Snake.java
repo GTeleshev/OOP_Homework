@@ -1,9 +1,9 @@
 package zoo.animals;
 
 public class Snake extends Animal {
-    protected int bodyLength;
-    protected static final int MAX_WEIGHT = 100;
+    protected static final int MAX_WEIGHT = 20;
     protected static final String TYPE = "Snake";
+    protected int bodyLength;
 
     public Snake(int age, int weight, int limbsCount, int bodyLength) {
         super(age, weight, limbsCount);

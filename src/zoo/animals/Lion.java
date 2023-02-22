@@ -1,9 +1,14 @@
 package zoo.animals;
 
 public class Lion extends Animal implements Comparable<Lion> {
-    protected int maneLength;
     protected static final int MAX_WEIGHT = 100;
     protected static final String TYPE = "Lion";
+    protected int maneLength;
+
+    public Lion(int age, int weight, int limbsCount, int maneLegth) {
+        super(age, weight, limbsCount);
+        this.maneLength = maneLegth;
+    }
 
     @Override
     public String toString() {
@@ -23,11 +28,6 @@ public class Lion extends Animal implements Comparable<Lion> {
         this.maneLength = maneLength;
     }
 
-    public Lion(int age, int weight, int limbsCount, int maneLegth) {
-        super(age, weight, limbsCount);
-        this.maneLength = maneLegth;
-    }
-
     @Override
     public int getMaxWeight() {
         return MAX_WEIGHT;
@@ -40,11 +40,6 @@ public class Lion extends Animal implements Comparable<Lion> {
 
     @Override
     public int compareTo(Lion o) {
-        if (this.age > o.age) {
-            return 1;
-        }
-        if (this.age < o.age) {
-            return -1;
-        } else return 0;
+        return Integer.compare(this.getAge(), o.getAge());
     }
 }

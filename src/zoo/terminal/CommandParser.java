@@ -1,2 +1,5 @@
-package zoo.terminal;public class CommandParser {
+package zoo.terminal;
+
+public interface CommandParser {
+    public String[] parseCommand (String inputCommand);
 }

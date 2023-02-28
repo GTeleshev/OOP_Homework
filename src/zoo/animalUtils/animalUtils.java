@@ -10,8 +10,7 @@ public class animalUtils {
     //    - Создать пэкедж animalUtils, работу продолжаем в нём
 //- создать класс AnimalUtils и реализовать в нём статический метод для сортировки списка животных по возрасту
 //    <T extends Animal> List<T> sortAnimals (List<T> animalList)
-    public static void sortAnimal(List<? extends Animal> animalList) {
+    public static <T extends Animal> void sortAnimal(List<T> animalList) {
         Collections.sort(animalList, new AnimalComparator());
     }
-
 }

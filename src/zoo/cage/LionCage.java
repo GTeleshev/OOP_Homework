@@ -46,6 +46,12 @@ public class LionCage implements AnimalCage<Lion> {
         } else return null;
     }
 
+    public void deleteLion(Lion lion){
+        System.out.println("Удаляем льва: ");
+        System.out.println((lion.toString()));
+        lions.remove(lion);
+    }
+
     public void printCage() {
         for (Lion el : lions
         ) {

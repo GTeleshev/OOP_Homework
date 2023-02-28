@@ -1,13 +1,15 @@
 package zoo.zoo;
 
+import zoo.animals.Animal;
+import zoo.animals.Lion;
 import zoo.cage.AnimalCage;
 import zoo.cage.LionCage;
 import zoo.cage.SnakeCage;
 import zoo.cage.WolfCage;
-
 import java.util.ArrayList;
+import java.util.Random;
 
-public class AnimalCage<T extends zoo.cage.AnimalCage>  Zoo {
+public class Zoo {
     //    - Создать пэкедж zoo, работу продолжаем в нём создать класс Zoo и объявить у него 3 переменные:
 //    клетка с волками //    клетка с львами
 //    террариум со змеями
@@ -17,6 +19,9 @@ public class AnimalCage<T extends zoo.cage.AnimalCage>  Zoo {
     private ArrayList<SnakeCage> snakeTerrariums;
 
     public Zoo() {
+        this.wolfCages = new ArrayList<>();
+        this.lionCages = new ArrayList<>();
+        this.snakeTerrariums = new ArrayList<>();
     }
 
     @Override
@@ -27,9 +32,36 @@ public class AnimalCage<T extends zoo.cage.AnimalCage>  Zoo {
                 ", snakeTerrarium=" + snakeTerrariums +
                 '}';
     }
-    
-    public AnimalCage returnCage(){
-        
+
+    public void addLion(Lion lionToAdd){
+        int len = lionCages.size();
+        Random rand = new Random();
+        int cageNumber = rand.nextInt(len);
+        if (lionCages !=null) {
+            LionCage randCage = lionCages.get(cageNumber);
+            System.out.println("Добавляем льва");
+            System.out.println(lionToAdd.toString());
+            randCage.animalAdd(lionToAdd);
+        }
+        else {
+            System.out.println("Lion cage list is empty");
+        }
+    }
+
+    public void removeRandomLion(){
+        int len = lionCages.size();
+        Random rand = new Random();
+        int cageNumber = rand.nextInt(len);
+        if (lionCages !=null) {
+            LionCage randCage = lionCages.get(cageNumber);
+            if(randCage != null) {randCage.deleteLion(randCage.catchAnimal());}
+            else {
+                System.out.println("Cage is empty");
+            };
+        }
+        else {
+            System.out.println("Lion cage list is empty");
+        }
     }
 
     public void addLionCage(LionCage cageToAdd) {

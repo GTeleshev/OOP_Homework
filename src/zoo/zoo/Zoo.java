@@ -1,12 +1,13 @@
 package zoo.zoo;
 
+import zoo.cage.AnimalCage;
 import zoo.cage.LionCage;
 import zoo.cage.SnakeCage;
 import zoo.cage.WolfCage;
 
 import java.util.ArrayList;
 
-public class Zoo {
+public class AnimalCage<T extends zoo.cage.AnimalCage>  Zoo {
     //    - Создать пэкедж zoo, работу продолжаем в нём создать класс Zoo и объявить у него 3 переменные:
 //    клетка с волками //    клетка с львами
 //    террариум со змеями
@@ -25,6 +26,10 @@ public class Zoo {
                 ", lionCage=" + lionCages +
                 ", snakeTerrarium=" + snakeTerrariums +
                 '}';
+    }
+    
+    public AnimalCage returnCage(){
+        
     }
 
     public void addLionCage(LionCage cageToAdd) {

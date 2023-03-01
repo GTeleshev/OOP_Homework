@@ -11,7 +11,7 @@ public class Command {
     public static final String EXIT = "Exit";
     public static final String LION = "Lion";
     public static final String WOLF = "Wolf";
-    public static final String Snake = "Snake";
+    public static final String SNAKE = "Snake";
 
     private final String commandString;
     private final String animalToAct;
@@ -38,7 +38,7 @@ public class Command {
     }
 
     public boolean isSnake() {
-        return animalToAct.equalsIgnoreCase(Snake);
+        return animalToAct.equalsIgnoreCase(SNAKE);
     }
 
     public boolean isPrintZoo() {

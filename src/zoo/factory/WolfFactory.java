@@ -8,12 +8,16 @@ import java.util.Random;
 
 public class WolfFactory {
 
-    private static final Random rand = new Random();
+    private static final Random RAND = new Random();
+
+    public static Wolf createRandomWolf() {
+        return new Wolf(RAND.nextInt(50), RAND.nextInt(50), 4);
+    }
 
     public static ArrayList<Wolf> createWolfCollection(int wolfCount) {
         ArrayList<Wolf> newWolfCollection = new ArrayList<>();
         for (int i = 0; i < wolfCount; i++) {
-            newWolfCollection.add(new Wolf(rand.nextInt(50), 10, 4));
+            newWolfCollection.add(createRandomWolf());
         }
         return newWolfCollection;
     }

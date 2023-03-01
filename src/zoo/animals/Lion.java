@@ -1,12 +1,21 @@
 package zoo.animals;
 
-public class Lion extends Animal implements Comparable<Lion> {
+import zoo.animals.interfaces.Limbs;
+import zoo.animals.interfaces.Mane;
+
+public class Lion extends Animal implements Comparable<Lion>, Limbs, Mane {
     protected static final int MAX_WEIGHT = 100;
     protected static final String TYPE = "Lion";
     protected int maneLength;
+    protected int limbsCount;
+
+    public Lion(int age, int weight) {
+        super(age, weight);
+    }
 
     public Lion(int age, int weight, int limbsCount, int maneLegth) {
-        super(age, weight, limbsCount);
+        super(age, weight);
+        this.limbsCount = limbsCount;
         this.maneLength = maneLegth;
     }
 
@@ -14,7 +23,7 @@ public class Lion extends Animal implements Comparable<Lion> {
     public String toString() {
         return "Lion{" +
                 "maneLength=" + maneLength +
-                ", birthYear=" + age +
+                ", age=" + age +
                 ", weight=" + weight +
                 ", limbsCount=" + limbsCount +
                 '}';
@@ -41,5 +50,20 @@ public class Lion extends Animal implements Comparable<Lion> {
     @Override
     public int compareTo(Lion o) {
         return Integer.compare(this.getAge(), o.getAge());
+    }
+
+    @Override
+    public int getLimbsCount() {
+        return this.limbsCount;
+    }
+
+    @Override
+    public void setLimbsCount(int limbsCount) {
+        this.limbsCount = limbsCount;
+    }
+
+    @Override
+    public void walkLike() {
+        System.out.println("Walk like a lion");
     }
 }

@@ -3,6 +3,7 @@ package zoo.cage;
 import zoo.animals.Wolf;
 import zoo.animals.comparators.WolfComparator;
 import zoo.animals.iterators.WolfIterator;
+import zoo.factory.WolfFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +11,7 @@ import java.util.Iterator;
 import java.util.Random;
 
 public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf> {
-    protected final ArrayList<Wolf> wolves;
+    protected ArrayList<Wolf> wolves;
     protected int clean;
     protected WolfIterator wolfIter;
 
@@ -38,6 +39,15 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf> {
             System.out.println("Not a wolf");
         }
         return wolves.size();
+    }
+
+    public void setWolves(ArrayList<Wolf> wolves) {
+        this.wolves = wolves;
+    }
+
+    @Override
+    public void collectionAdd(int animalCount) {
+        this.setWolves(WolfFactory.createWolfCollection(animalCount));
     }
 
     @Override
@@ -80,5 +90,11 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf> {
     @Override
     public Iterator<Wolf> iterator() {
         return new WolfIterator(wolves);
+    }
+
+    public void deleteWolf(Wolf wolf) {
+        System.out.println("Удаляем волка: ");
+        System.out.println(wolf.toString());
+        wolves.remove(wolf);
     }
 }

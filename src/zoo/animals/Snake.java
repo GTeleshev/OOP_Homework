@@ -1,21 +1,27 @@
 package zoo.animals;
 
-public class Snake extends Animal {
+import zoo.animals.interfaces.ThinBody;
+
+public class Snake extends Animal implements ThinBody {
     protected static final int MAX_WEIGHT = 20;
     protected static final String TYPE = "Snake";
     protected int bodyLength;
 
-    public Snake(int age, int weight, int limbsCount, int bodyLength) {
-        super(age, weight, limbsCount);
+    public Snake(int age, int weight) {
+        super(age, weight);
+    }
+
+    public Snake(int age, int weight, int bodyLength) {
+        super(age, weight);
         this.bodyLength = bodyLength;
     }
 
     @Override
     public String toString() {
         return "Snake{" +
-                "birthYear=" + age +
+                "bodyLength=" + bodyLength +
+                ", age=" + age +
                 ", weight=" + weight +
-                ", limbsCount=" + limbsCount +
                 '}';
     }
 
@@ -29,10 +35,12 @@ public class Snake extends Animal {
         return TYPE;
     }
 
+    @Override
     public int getBodyLength() {
         return this.bodyLength;
     }
 
+    @Override
     public void setBodyLength(int bodyLength) {
         this.bodyLength = bodyLength;
     }

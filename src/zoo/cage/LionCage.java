@@ -3,23 +3,33 @@ package zoo.cage;
 import zoo.animals.Lion;
 import zoo.animals.comparators.AnimalComparator;
 import zoo.animals.comparators.LionComparator;
+import zoo.factory.LionsFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
 public class LionCage implements AnimalCage<Lion> {
-    private final ArrayList<Lion> lions;
+    private ArrayList<Lion> lions;
     private int clean;
 
     public LionCage() {
         lions = new ArrayList<>();
     }
 
+    private void setLions(ArrayList<Lion> lions) {
+        this.lions = lions;
+    }
+
     @Override
     public int animalAdd(Lion lionToAdd) {
         lions.add(lionToAdd);
         return lions.size();
+    }
+
+    @Override
+    public void collectionAdd(int animalCount) {
+        this.setLions(LionsFactory.createLionCollection(animalCount));
     }
 
     @Override
@@ -46,9 +56,9 @@ public class LionCage implements AnimalCage<Lion> {
         } else return null;
     }
 
-    public void deleteLion(Lion lion){
+    public void deleteLion(Lion lion) {
         System.out.println("Удаляем льва: ");
-        System.out.println((lion.toString()));
+        System.out.println(lion.toString());
         lions.remove(lion);
     }
 

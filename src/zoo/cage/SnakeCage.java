@@ -6,10 +6,11 @@ import zoo.factory.SnakeFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class SnakeCage implements AnimalCage<Snake> {
-    private ArrayList<Snake> snakes;
+    private List<Snake> snakes;
     private int clean;
 
     public SnakeCage() {

@@ -7,14 +7,15 @@ import zoo.factory.LionsFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class LionCage implements AnimalCage<Lion> {
-    private ArrayList<Lion> lions;
+    private List<Lion> lions;
     private int clean;
 
     public LionCage() {
-        lions = new ArrayList<>();
+        this.lions = new ArrayList<>();
     }
 
     private void setLions(ArrayList<Lion> lions) {

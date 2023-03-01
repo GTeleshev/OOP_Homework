@@ -5,19 +5,16 @@ import zoo.animals.comparators.WolfComparator;
 import zoo.animals.iterators.WolfIterator;
 import zoo.factory.WolfFactory;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
 public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf> {
-    protected ArrayList<Wolf> wolves;
-    protected int clean;
-    protected WolfIterator wolfIter;
+    private List<Wolf> wolves;
+    private int clean;
+    private WolfIterator wolfIter;
 
     public WolfCage() {
-        wolves = new ArrayList<>();
-        wolfIter = new WolfIterator(wolves);
+        this.wolves = new ArrayList<>();
+        this.wolfIter = new WolfIterator(wolves);
     }
 
     public void sortByWeightAndAge() {

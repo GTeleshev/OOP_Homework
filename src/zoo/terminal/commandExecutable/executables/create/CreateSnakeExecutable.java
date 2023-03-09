@@ -1,4 +1,4 @@
-package zoo.terminal.commandExecutable.executables;
+package zoo.terminal.commandExecutable.executables.create;
 
 import zoo.factory.SnakeFactory;
 import zoo.terminal.commandExecutable.CommandExecutable;

@@ -1,4 +1,4 @@
-package zoo.terminal.commandExecutable.executables;
+package zoo.terminal.commandExecutable.executables.delete;
 
 import zoo.terminal.commandExecutable.CommandExecutable;
 import zoo.zoo.Zoo;

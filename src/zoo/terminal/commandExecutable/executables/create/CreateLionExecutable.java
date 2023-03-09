@@ -1,12 +1,13 @@
-package zoo.terminal.commandExecutable.executables;
+package zoo.terminal.commandExecutable.executables.create;
 
+import zoo.factory.LionsFactory;
 import zoo.terminal.commandExecutable.CommandExecutable;
 import zoo.zoo.Zoo;
 
-public class DeleteWolfExecutable implements CommandExecutable {
+public class CreateLionExecutable implements CommandExecutable {
     private Zoo zoo;
 
-    public DeleteWolfExecutable(Zoo zoo) {
+    public CreateLionExecutable(Zoo zoo) {
         this.zoo = zoo;
     }
 
@@ -20,6 +21,6 @@ public class DeleteWolfExecutable implements CommandExecutable {
 
     @Override
     public void execute() {
-        this.zoo.removeRandomWolf();
+        this.zoo.addLion(LionsFactory.createRandomLion());
     }
 }
